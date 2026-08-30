@@ -31,7 +31,7 @@ export const refreshSession = createAsyncThunk(
   "auth/refresh",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await refreshClient.post("/auth/refresh");
+      const response = await refreshClient.post("api/auth/refresh");
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || "Unauthenticated");
