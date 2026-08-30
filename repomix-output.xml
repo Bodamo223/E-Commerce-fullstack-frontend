@@ -1,0 +1,464 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.gitignore
+eslint.config.js
+index.html
+package.json
+public/vite.svg
+README.md
+src/App.css
+src/App.jsx
+src/components/Navbar.jsx
+src/components/ProtectedRoute.jsx
+src/main.jsx
+src/pages/About.jsx
+src/pages/Contact.jsx
+src/pages/Dashboard.jsx
+src/pages/Dashboard/Overview.jsx
+src/pages/Dashboard/Settings.jsx
+src/pages/Dashboard/Stats.jsx
+src/pages/Home.jsx
+src/pages/NotFound.jsx
+src/pages/ProductDetails.jsx
+vite.config.js
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".gitignore">
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+</file>
+
+<file path="eslint.config.js">
+import js from '@eslint/js'
+import globals from 'globals'
+import reactHooks from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
+import { defineConfig, globalIgnores } from 'eslint/config'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{js,jsx}'],
+    extends: [
+      js.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite,
+    ],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.browser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        ecmaFeatures: { jsx: true },
+        sourceType: 'module',
+      },
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+    },
+  },
+])
+</file>
+
+<file path="index.html">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react-project</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+</file>
+
+<file path="package.json">
+{
+  "name": "react-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.13.6",
+    "bootstrap": "^5.3.8",
+    "react": "^19.2.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.3.1"
+  }
+}
+</file>
+
+<file path="public/vite.svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+</file>
+
+<file path="README.md">
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+</file>
+
+<file path="src/App.css">
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap");
+body {
+  font-family: "poppins";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  transition: 0.3s ease;
+}
+</file>
+
+<file path="src/App.jsx">
+import { useEffect, useState } from "react";
+import { Home } from "./pages/Home.jsx";
+import { About } from "./pages/About.jsx";
+import { Contact } from "./pages/Contact.jsx";
+import { Navbar } from "./components/Navbar.jsx";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import { Dashboard } from "./pages/Dashboard.jsx";
+import { Overview } from "./pages/Dashboard/Overview.jsx";
+import { Stats } from "./pages/Dashboard/Stats.jsx";
+import { Settings } from "./pages/Dashboard/Settings.jsx";
+import { ProductDetails } from "./pages/ProductDetails.jsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.jsx";
+import { NotFound } from "./pages/NotFound.jsx";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Overview />} />
+          <Route path="stats" element={<Stats />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="productdetails/:id" element={<ProductDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
+}
+
+export default App;
+</file>
+
+<file path="src/components/Navbar.jsx">
+import { Link, NavLink, useLocation } from "react-router-dom";
+export function Navbar() {
+  const location = useLocation();
+  console.log(location);
+  return (
+    <nav>
+      <NavLink
+        to="/"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        to="/about"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        About
+      </NavLink>
+      <NavLink
+        to="/contact"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Contact
+      </NavLink>
+      <NavLink
+        to="/dashboard"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Dashboard
+      </NavLink>
+      <NavLink
+        to="/productdetails"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Product Details
+      </NavLink>
+    </nav>
+  );
+}
+</file>
+
+<file path="src/components/ProtectedRoute.jsx">
+import { Navigate } from "react-router-dom";
+
+export function ProtectedRoute({ children }) {
+  const isLogged = localStorage.getItem("token");
+  if (!isLogged) {
+    return <Navigate to="/" />;
+  }
+  return children;
+}
+</file>
+
+<file path="src/main.jsx">
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
+import { BrowserRouter } from "react-router-dom";
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>,
+);
+</file>
+
+<file path="src/pages/About.jsx">
+export function About() {
+  return <h1>About Page</h1>;
+}
+</file>
+
+<file path="src/pages/Contact.jsx">
+export function Contact() {
+  return <h1>Contact Page</h1>;
+}
+</file>
+
+<file path="src/pages/Dashboard.jsx">
+import { NavLink, Outlet } from "react-router-dom";
+
+export function Dashboard() {
+  return (
+    <div>
+      <h1>Dashboard</h1>
+      <NavLink
+        to="/dashboard"
+        end
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Overview
+      </NavLink>
+      <NavLink
+        to="stats"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Stats
+      </NavLink>
+      <NavLink
+        to="settings"
+        style={({ isActive }) => ({ color: isActive ? "red" : "black" })}
+      >
+        Settings
+      </NavLink>
+      <Outlet />
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/Dashboard/Overview.jsx">
+export function Overview() {
+  return <h1>Overview Page</h1>;
+}
+</file>
+
+<file path="src/pages/Dashboard/Settings.jsx">
+export function Settings() {
+  return <h1>Settings Page</h1>;
+}
+</file>
+
+<file path="src/pages/Dashboard/Stats.jsx">
+export function Stats() {
+  return <h1>Stats Page</h1>;
+}
+</file>
+
+<file path="src/pages/Home.jsx">
+import { useNavigate, useSearchParams } from "react-router-dom";
+
+export function Home() {
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const category = searchParams.get("category");
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <h3>Category: {category || "No category selected"}</h3>
+      <button onClick={() => setSearchParams({ category: "phones" })}>
+        Phones
+      </button>
+      <button onClick={() => setSearchParams({ category: "laptops" })}>
+        Laptops
+      </button>
+      <button onClick={() => setSearchParams({})}>Clear</button>
+      <button onClick={() => navigate("/about")}>Go to about</button>
+      <button onClick={() => navigate(-1)}>Back</button>
+      <br />
+      <button
+        onClick={() => {
+          localStorage.setItem("token", "123");
+        }}
+      >
+        Login
+      </button>
+      <button
+        onClick={() => {
+          localStorage.removeItem("token");
+        }}
+      >
+        Logout
+      </button>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/NotFound.jsx">
+import { useNavigate } from "react-router-dom";
+
+export function NotFound() {
+  const navigate = useNavigate();
+  return (
+    <div>
+      <h1>404 - Page Not Found</h1>
+      <button onClick={() => navigate("/")}>Home</button>
+    </div>
+  );
+}
+</file>
+
+<file path="src/pages/ProductDetails.jsx">
+import { useParams } from "react-router-dom";
+
+export function ProductDetails() {
+  const { id } = useParams();
+  return <h1>Product id: {id}</h1>;
+}
+</file>
+
+<file path="vite.config.js">
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+</file>
+
+</files>

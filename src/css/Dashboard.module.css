@@ -1,0 +1,95 @@
+.dashboard-container {
+  width: 100%;
+  min-height: calc(100vh - 100px);
+  display: flex;
+}
+.sidebar {
+  min-width: 18%;
+  background: linear-gradient(135deg, #13122e, #1a1836);
+}
+.sidebar .sidebar-header * {
+  margin: 0;
+}
+.sidebar-header {
+  border-bottom: 1px solid rgb(73, 76, 118);
+  padding: 20px;
+}
+.sidebar-header span {
+  color: rgb(73, 76, 118);
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+.sidebar-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 20px;
+}
+.sidebar-links li {
+  padding: 15px 20px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+.sidebar-links li .side-link {
+  text-decoration: none;
+  height: 100%;
+}
+.sidebar-links li:has(.side-link-active) {
+  background-color: #1e203a;
+  border: 1px solid rgba(199, 192, 240, 0.12);
+}
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    min-width: 100%;
+    width: 100%;
+    min-height: auto;
+    background: linear-gradient(135deg, #13122e, #1a1836);
+  }
+  .sidebar-header {
+    display: none;
+  }
+  .sidebar-links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0;
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(73, 76, 118, 0.5);
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidebar-links::-webkit-scrollbar {
+    display: none;
+  }
+  .sidebar-links li {
+    padding: 14px 22px;
+    border-radius: 0;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+  }
+  .sidebar-links li:has(.side-link-active) {
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #c7c0f0 !important;
+  }
+  .side-link {
+    font-size: 13px;
+    font-weight: 600;
+  }
+}

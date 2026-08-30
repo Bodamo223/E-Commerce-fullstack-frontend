@@ -1,0 +1,115 @@
+.features-section {
+  animation:
+    fadeIn 1000ms linear,
+    animate 7s linear infinite;
+}
+.features {
+  width: auto;
+  min-height: 320px;
+  display: flex;
+  align-items: stretch;
+  gap: 45px;
+  border-bottom: 5px solid #1e203a;
+  padding: 10px 50px 45px 50px;
+}
+.features-section .features-heading {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 20px;
+}
+.features .feature {
+  z-index: 0;
+  position: relative;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 30px;
+  border-radius: 20px;
+  background-color: #1e203a;
+  overflow: hidden;
+  background: repeating-conic-gradient(
+    from var(--angle),
+    #c1a6ff 0%,
+    #c1a6ff 5%,
+    transparent 5%,
+    transparent 40%,
+    #c1a6ff 50%
+  );
+  animation: animate 7s linear infinite;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes animate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+.feature::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background-color: #1e203a;
+  z-index: 0;
+  border-radius: 20px;
+}
+.feature * {
+  z-index: 1000;
+}
+.feature .icon {
+  border-radius: 50%;
+  background-color: #c1a6ff;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.feature:hover {
+  transform: translateY(-5px);
+}
+.feature:hover .icon {
+  box-shadow: 0 0 30px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .features {
+    flex-wrap: wrap;
+    padding: 10px 30px 40px 30px;
+    gap: 20px;
+  }
+  .features .feature {
+    flex: 1 1 calc(50% - 10px);
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 560px) {
+  .features {
+    padding: 10px 16px 30px 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .features .feature {
+    flex: 1 1 100%;
+    min-height: 200px;
+    padding: 25px 20px;
+  }
+}

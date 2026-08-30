@@ -1,0 +1,38 @@
+html,
+body {
+  font-family: poppins;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  background-color: #0a0b23;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+* {
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  color: #c7c0f0;
+}
+
+.app-content {
+  padding-top: 100px;
+}
+
+.Toastify__toast {
+  background-color: #0a0b23;
+}
+
+.Toastify__toast--success {
+  color: #00ff88;
+}
+
+.Toastify__toast--error {
+  color: #ff4d4d;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding-top: 70px;
+  }
+}

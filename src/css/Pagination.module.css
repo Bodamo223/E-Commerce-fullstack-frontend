@@ -1,0 +1,42 @@
+.pag {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
+.pag * {
+  background-color: #1e203a;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  font-family: poppins;
+  border-radius: 5px;
+}
+.pag *:hover {
+  cursor: pointer;
+  background-color: #323458;
+}
+.pag *:active {
+  background-color: #4d4f75;
+}
+
+.active-page {
+  background-color: #c7c0f0 !important;
+  color: #0a0b23 !important;
+}
+
+@media (max-width: 640px) {
+  .pag {
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .pag * {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
