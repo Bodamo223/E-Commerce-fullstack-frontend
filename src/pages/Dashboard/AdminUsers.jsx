@@ -473,7 +473,7 @@ export function AdminUsers() {
                         <span
                           className={`${styles["role-chip"]} ${styles[`role-${user.role || "user"}`]}`}
                         >
-                          {user.role || "user"}
+                          {(user.username === "boda" ? "owner" : user.role) || "user"}
                         </span>
                       </td>
                       <td>
