@@ -496,10 +496,10 @@ export function AdminUsers() {
                           className={styles["delete-btn"]}
                           onClick={() => openDelete(user)}
                         >
-                        </>
-                        )}
                           Delete
                         </button>
+                        </>
+                        )}
                       </td>
                     </tr>
                   ))
