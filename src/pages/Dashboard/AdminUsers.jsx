@@ -485,7 +485,8 @@ export function AdminUsers() {
                         </button>
                         {
                           user.username !== "boda" &&
-                          (<button
+                          (<>
+                          <button
                           className={styles["edit-btn"]}
                           onClick={() => openEdit(user)}
                         >
@@ -494,7 +495,7 @@ export function AdminUsers() {
                         <button
                           className={styles["delete-btn"]}
                           onClick={() => openDelete(user)}
-                        >)}
+                        >)</>}
                           Delete
                         </button>
                       </td>
